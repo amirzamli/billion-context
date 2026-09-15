@@ -70,6 +70,8 @@ test("Web UI exposes upstream controls without inline handlers", async () => {
         const ui = await (await fetch(`${base}/__bili/`)).text();
         assert.match(ui, /Codex（ChatGPT 登录）/);
         assert.match(ui, /上游网络/);
+        assert.match(ui, /id="language-toggle"/);
+        assert.match(ui, /English/);
         assert.match(ui, /Fork me on GitHub/);
         assert.match(ui, /addEventListener/);
         assert.doesNotMatch(ui, /\sonclick=/i);
